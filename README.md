@@ -8,6 +8,18 @@ native `/staking` surface built on Streamflow's audited Solana staking programs.
 > boots into `AWAITING POOL CONFIGURATION` instead of inventing an address. No
 > Mainnet pool was created and no Mainnet transaction was signed.
 
+## Live preview
+
+- Site: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/>
+- Staking: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/staking/>
+- Read-only admin: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/staking/admin/>
+
+The preview is built without production env values, so `/staking` shows the honest
+`AWAITING POOL CONFIGURATION` gate. GitHub Pages has no server-side rewrites; the
+workflow publishes `staking/index.html`, `staking/admin/index.html` and `404.html`
+so direct links return the app instead of a bare 404. See
+[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
 ---
 
 ## What is in the box
@@ -118,6 +130,7 @@ docs/
   STREAMFLOW_INTEGRATION.md     SDK integration and account/authority details
   DEVNET_RUNBOOK.md             how to reproduce the test environment
   DEVNET_RESULTS.md             actual signatures and outcomes
+  DEPLOYMENT.md                 GitHub Pages build, base path, direct routes
   MAINNET_REPORT_TEMPLATE.md    sign-off checklist before Mainnet writes
 ```
 
@@ -194,7 +207,8 @@ including:
 
 ## Links
 
-- Repository: <https://github.com/html-crm/CARTOONAI-PEOJECT23>
+- Original target repository (write access pending): <https://github.com/html-crm/CARTOONAI-PEOJECT23>
+- Published mirror + Pages: <https://github.com/shitoshisol-arch/CARTOONAI-PEOJECT23>
 - Streamflow staking SDK docs: <https://js-sdk-docs.streamflow.finance/modules/_streamflow_staking.html>
 - Streamflow developer docs: <https://developers.streamflow.finance/>
 - Streamflow security/audits: <https://docs.streamflow.finance/en/articles/9338573-has-streamflow-been-audited>
