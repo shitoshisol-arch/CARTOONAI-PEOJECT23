@@ -15,6 +15,7 @@ interface ImportMetaEnv {
   readonly VITE_REWARD_ALLOCATION?: string;
   readonly VITE_MAINNET_WRITES?: string;
   readonly VITE_PRIORITY_FEE_MICRO_LAMPORTS?: string;
+  readonly VITE_TEST_FAUCET?: string;
 }
 
 interface ImportMeta {

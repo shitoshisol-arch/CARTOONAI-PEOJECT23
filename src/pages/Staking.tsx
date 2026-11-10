@@ -82,6 +82,7 @@ import {
   type StatusTone,
 } from "../components/ui";
 import { WalletButton } from "../components/wallet/WalletButton";
+import { TestTokensPanel } from "../components/staking/TestTokensPanel";
 import { useWalletUI } from "../components/wallet/WalletUI";
 
 interface ReviewState {
@@ -400,6 +401,12 @@ export function Staking() {
 
             {pool ? (
               <>
+                <TestTokensPanel
+                  connected={Boolean(publicKey)}
+                  walletAddress={walletAddress}
+                  onClaimed={() => void refresh()}
+                />
+
                 <PoolVitals pool={pool} capacityProgress={percentOf(pool.pool.totalStake, capRaw)} />
 
                 <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">

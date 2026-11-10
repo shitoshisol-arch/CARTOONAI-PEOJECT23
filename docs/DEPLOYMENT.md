@@ -13,8 +13,32 @@
 Both hosts serve the same build. The Vercel project is `chill106` under the
 `boost1connects-projects` team; the custom domain is attached to that project.
 
-The public build has **no production pool values**, so `/staking` deliberately renders
-`AWAITING POOL CONFIGURATION`. No mint or pool has been published yet.
+The Vercel build is configured with the **Devnet test pool** so `/staking` is live and
+testable. The GitHub Pages mirror still has no production env values and therefore
+shows `AWAITING POOL CONFIGURATION`. That is expected.
+
+## Vercel environment
+
+Production variables currently set on `chill106`:
+
+| Variable | Value / purpose |
+| --- | --- |
+| `VITE_SOLANA_CLUSTER` | `devnet` |
+| `VITE_TOKEN_MINT` | test mint `6ztfGd4EebntaSWQyg4hkHNfA2xJ5qEuWFrBXP1RGoYj` |
+| `VITE_STAKE_POOL` | `GPS47aw7LQwCmgUTLTYDs1cX6Eptji6YXoVNvkYjUzdb` |
+| `VITE_REWARD_POOL` | `C7aEa7FF5G7tDwmpQdzAg79Ro2nnEswzYbrFFzhsRp5y` |
+| `VITE_TOKEN_DECIMALS` | `8` |
+| `VITE_STAKE_DURATION_DAYS` | `1` |
+| `VITE_TARGET_APY` | `19` (display target) |
+| `VITE_STAKE_CAP` | `1000` |
+| `VITE_REWARD_ALLOCATION` | `100` |
+| `VITE_TEST_FAUCET` | `true` (Devnet-only) |
+| `TEST_MINT` | test mint (server-side) |
+| `TEST_MINT_AUTHORITY` | test mint authority keypair (Vercel secret) |
+| `TEST_RPC_URL` | `https://api.devnet.solana.com` |
+
+`TEST_MINT_AUTHORITY` is a secret and is never committed. The authority controls only
+the disposable Devnet test mint. See [`DEVNET_TEST_POOL.md`](DEVNET_TEST_POOL.md).
 
 ## Vercel setup
 

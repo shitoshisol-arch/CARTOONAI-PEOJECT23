@@ -3,10 +3,10 @@
 A dark archive/investigation-terminal frontend for the CHILL106 (F106) token, with a
 native `/staking` surface built on Streamflow's audited Solana staking programs.
 
-> **Status: frontend complete; on-chain pool not configured; Mainnet not touched.**
-> The token mint is still specified as "Later" in the brief, so the app intentionally
-> boots into `AWAITING POOL CONFIGURATION` instead of inventing an address. No
-> Mainnet pool was created and no Mainnet transaction was signed.
+> **Status: frontend complete; live Devnet test pool active; Mainnet not touched.**
+> A disposable Devnet mint + Streamflow pool is configured on the live site so staking
+> can be tested end to end. The F106 Mainnet mint is still unpublished, no Mainnet pool
+> exists, and no Mainnet transaction was signed.
 
 ## Live preview
 
@@ -17,9 +17,24 @@ native `/staking` surface built on Streamflow's audited Solana staking programs.
 
 The primary domain is served by Vercel (`chill106`, `boost1connects-projects`) with
 SPA rewrites and `www` → apex 308 redirects. The GitHub Pages mirror remains available.
-The preview is built without production env values, so `/staking` shows the honest
-`AWAITING POOL CONFIGURATION` gate. See
-[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+See [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
+## Live Devnet test pool
+
+The site is configured with a disposable public-Devnet pool so the staking flow can be
+tested without touching Mainnet:
+
+- Mint: `6ztfGd4EebntaSWQyg4hkHNfA2xJ5qEuWFrBXP1RGoYj`
+- Stake pool: `GPS47aw7LQwCmgUTLTYDs1cX6Eptji6YXoVNvkYjUzdb`
+- Reward pool: `C7aEa7FF5G7tDwmpQdzAg79Ro2nnEswzYbrFFzhsRp5y`
+
+To test: set Phantom to **Devnet**, open `/staking`, connect the wallet, and click
+**CLAIM 100 TEST TOKENS**. Then stake. Rewards accrue every 60 seconds; the lock is
+1 day. See [`docs/DEVNET_TEST_POOL.md`](docs/DEVNET_TEST_POOL.md) for the live
+stake/claim signatures and how the pool was created.
+
+This is a test pool only. It is not the F106 Mainnet pool and the test token has no
+value.
 
 ---
 
@@ -38,6 +53,7 @@ The preview is built without production env values, so `/staking` shows the hone
 | Mainnet write lock | Built (`VITE_MAINNET_WRITES=false` by default) |
 | Public Devnet transaction run | **Blocked by the public faucet being closed** |
 | Local Devnet-program E2E | **Passed** (full lifecycle, real signatures) |
+| Live public-Devnet test pool | **Active** (test mint + Streamflow pool, claim 100 test tokens on the site) |
 | F106 Mainnet pool | **Not created** (mint unknown) |
 
 The staking integration uses `@streamflow/staking@13.4.0`. It does **not** implement a
@@ -126,12 +142,15 @@ src/
   pages/Admin.tsx               read-only monitor
 scripts/
   devnet-e2e.ts                 guarded local/Devnet lifecycle harness
+  create-devnet-test-pool.ts    creates the disposable public-Devnet test pool
+  test-live-pool.ts             stake/claim smoke run against that pool
   economics.ts                  CLI economics audit
 docs/
   STREAMFLOW_INTEGRATION.md     SDK integration and account/authority details
   DEVNET_RUNBOOK.md             how to reproduce the test environment
   DEVNET_RESULTS.md             actual signatures and outcomes
-  DEPLOYMENT.md                 GitHub Pages build, base path, direct routes
+  DEVNET_TEST_POOL.md           live Devnet test pool, claim flow, proof
+  DEPLOYMENT.md                 Vercel + Pages build, base path, direct routes
   MAINNET_REPORT_TEMPLATE.md    sign-off checklist before Mainnet writes
 ```
 

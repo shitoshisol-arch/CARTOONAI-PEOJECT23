@@ -1,0 +1,25 @@
+{
+  "cluster": "devnet",
+  "createdAt": "2026-11-10T06:38:21.694Z",
+  "rpc": "https://api.devnet.solana.com",
+  "authority": "G9XtdJXomEdYgTMUfBzoG2FbqeKxpRJqNnA2PrdH2kbF",
+  "mint": "6ztfGd4EebntaSWQyg4hkHNfA2xJ5qEuWFrBXP1RGoYj",
+  "decimals": 8,
+  "stakePool": "GPS47aw7LQwCmgUTLTYDs1cX6Eptji6YXoVNvkYjUzdb",
+  "rewardPool": "C7aEa7FF5G7tDwmpQdzAg79Ro2nnEswzYbrFFzhsRp5y",
+  "rewardMint": "6ztfGd4EebntaSWQyg4hkHNfA2xJ5qEuWFrBXP1RGoYj",
+  "lockSeconds": 86400,
+  "rewardPeriodSeconds": 60,
+  "rewardAmount": "361",
+  "rewardFundedTokens": 100,
+  "capTokens": 1000,
+  "targetApyPercent": 19,
+  "impliedApyPercent": 18.97416,
+  "permissionless": true,
+  "signatures": {
+    "mintTokens": "5CdtL58N6dkbTuYbdm5SHCpk6zzDKQezGtoKGXwgro3D1QKE3Nc2AEahMWAWDxKm4NU25Vs569sjdYfzLpysw3JJ",
+    "createStakePool": "2ZMDzfjAj4rYXBZSszYZGcpiYgFtLNqknJMJrkrTGDsAfCLkxVwFfKSi1nhP6SrkPDNb2ubdwx1CECSBad2aqy3C",
+    "createRewardPool": "3K4VKmgxbCkQgAGrhtChJtzryVL6uSHqv6kftZyurc1JT2LToxJR1yrweut8PmP1Srr5oVohuTiXCLCLPMVk5YXB",
+    "fundRewardPool": "4KKTFGRP46C74WoBQg98U18BR7yUqifpoiobX5P9VkvzRDLWG5TJ1uzUMGDWkeAYE3JLnRt8GHBR8j6Yqf6LW1HM"
+  }
+}

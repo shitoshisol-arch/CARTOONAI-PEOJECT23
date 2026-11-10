@@ -98,6 +98,10 @@ export const PRIORITY_FEE_MICRO_LAMPORTS = Math.max(
 
 export const MAINNET_WRITES_ENABLED = envBool("VITE_MAINNET_WRITES", false);
 
+/** Devnet-only, self-service test token faucet. Never enabled on Mainnet builds. */
+export const TEST_FAUCET_ENABLED =
+  !IS_MAINNET && envBool("VITE_TEST_FAUCET", false);
+
 export const CONFIG_MISSING: string[] = [];
 if (!TOKEN_MINT) CONFIG_MISSING.push("VITE_TOKEN_MINT");
 if (!STAKE_POOL_ADDRESS) CONFIG_MISSING.push("VITE_STAKE_POOL");
