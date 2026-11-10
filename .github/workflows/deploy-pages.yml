@@ -36,7 +36,11 @@ jobs:
           VITE_BASE: /CARTOONAI-PEOJECT23/
 
       - name: Add SPA fallback
-        run: cp dist/index.html dist/404.html
+        run: |
+          cp dist/index.html dist/404.html
+          mkdir -p dist/staking/admin
+          cp dist/index.html dist/staking/index.html
+          cp dist/index.html dist/staking/admin/index.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
