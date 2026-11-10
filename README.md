@@ -10,14 +10,15 @@ native `/staking` surface built on Streamflow's audited Solana staking programs.
 
 ## Live preview
 
-- Site: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/>
-- Staking: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/staking/>
-- Read-only admin: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/staking/admin/>
+- Primary site: <https://chillguyrich.fun/>
+- Staking: <https://chillguyrich.fun/staking>
+- Read-only admin: <https://chillguyrich.fun/staking/admin>
+- GitHub Pages mirror: <https://shitoshisol-arch.github.io/CARTOONAI-PEOJECT23/>
 
+The primary domain is served by Vercel (`chill106`, `boost1connects-projects`) with
+SPA rewrites and `www` → apex 308 redirects. The GitHub Pages mirror remains available.
 The preview is built without production env values, so `/staking` shows the honest
-`AWAITING POOL CONFIGURATION` gate. GitHub Pages has no server-side rewrites; the
-workflow publishes `staking/index.html`, `staking/admin/index.html` and `404.html`
-so direct links return the app instead of a bare 404. See
+`AWAITING POOL CONFIGURATION` gate. See
 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
 ---

@@ -17,3 +17,7 @@ devnet-local-e2e-result.json
 !docs/devnet-local-e2e-result.json
 funded-account.json
 tsconfig.tsbuildinfo
+.vercel
+
+.vercel
+.env*
